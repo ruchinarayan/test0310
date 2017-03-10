@@ -1,0 +1,4 @@
+Steps:
+
+1. Install Tortoise Git
+2. Goto -> PuttyGen -> generate key
