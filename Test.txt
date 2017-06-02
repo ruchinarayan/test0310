@@ -1,3 +1,38 @@
-testing tortoise git with GitHub repo
+#testing tortoise git with GitHub repo
 
-ghuukg
+#print("To handle file using python")
+
+import csv
+
+myList1 = [1,2,3,4,5]
+myList2 = [4,5,6,7,8]
+
+newrow = []
+with open('labs.csv') as csvfile:
+	readCSV = csv.reader(csvfile, delimiter=',')
+	print(readCSV)
+
+	for row in readCSV:
+		print(row)
+		#newrow.append(row[3])
+		if(row[2] < "0.5"):
+			newrow.append(row[0])
+
+print(newrow)		
+
+print(myList1)
+print(myList2)
+
+myList3 = set(myList1).intersection(myList2)
+
+print(myList3)
+
+myList4 = set(myList1) - set(myList3)
+
+print(myList4)
+
+
+
+
+
+
