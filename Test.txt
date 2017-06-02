@@ -4,33 +4,40 @@
 
 import csv
 
-myList1 = [1,2,3,4,5]
-myList2 = [4,5,6,7,8]
+#myList1 = [1,2,3,4,5,1,2,3,4]
+#myList2 = [4,5,6,7,8,4,5,6,7,8]
 
-newrow = []
-with open('labs.csv') as csvfile:
+patients4above = []
+patients4below = []
+with open('patients.csv') as csvfile:
 	readCSV = csv.reader(csvfile, delimiter=',')
 	print(readCSV)
 
 	for row in readCSV:
 		print(row)
 		#newrow.append(row[3])
-		if(row[2] < "0.5"):
-			newrow.append(row[0])
+		if(row[13] >= "4"):
+			patients4above.append(row[0])
+			
+		if(row[13] <"4"):
+			patients4below.append(row[0])
 
-print(newrow)		
+print(patients4above)
+print(patients4below)
 
-print(myList1)
-print(myList2)
+print(len(patients4above))
+print(len(patients4below))
 
-myList3 = set(myList1).intersection(myList2)
+final = set(patients4above) - set(patients4below)
+print(len(final))
+		
 
-print(myList3)
-
-myList4 = set(myList1) - set(myList3)
-
-print(myList4)
-
+#print(myList1)
+#print(myList2)
+#myList3 = set(myList1).intersection(myList2)
+#print(myList3)
+#myList4 = set(myList1) - set(myList3)
+#print(myList4)
 
 
 
